@@ -1,0 +1,98 @@
+//Mock API
+//get all
+GET http://localhost:7071/api/doctor
+
+###
+//get by id
+GET http://localhost:7071/api/doctor/1
+
+###
+
+//create
+POST http://localhost:7071/api/doctor/
+
+{
+  "id": 4,
+  "name": "Dr David Park",
+  "dateOfBirth": "1978-11-15",
+  "yearOfGraduation": 2003,
+  "nameOfClinic": "Hillside Clinic",
+  "speciality": "PSYCHIATRY"
+}
+
+###
+
+//update
+PUT http://localhost:7071/api/doctor/4
+
+{
+  "id": 4,
+  "name": "Dr David Park",
+  "dateOfBirth": "1978-11-15",
+  "yearOfGraduation": 2003,
+  "nameOfClinic": "Hillside Medical Practice",
+  "speciality": "PSYCHIATRY"
+}
+###
+
+//delete
+DELETE http://localhost:7071/api/doctor/4
+
+###
+//get by speciality
+GET http://localhost:7071/api/doctor/speciality/SURGERY
+
+###
+
+//get by birth year
+GET http://localhost:7071/api/doctor/birthdate/range?from=1975-01-01&to=1978-01-01
+
+###
+
+//get doc from db
+GET http://localhost:7071/api/doctordb
+
+###
+
+GET http://localhost:7071/api/doctordb/1
+
+
+###
+
+PUT http://localhost:7071/api/doctordb/1
+
+{
+
+  "name": "Dr Alice Smithson",
+  "dateOfBirth": "1975-04-12",
+  "yearOfGraduation": 2003,
+  "nameOfClinic": "City Health Clinic",
+  "speciality": "FAMILY_MEDICINE"
+
+}
+
+###
+PUT http://localhost:7071/api/doctordb/2
+
+{
+  "id": 2,
+  "name": "Dr Bob Johnson",
+  "dateOfBirth": "1980-08-05",
+  "yearOfGraduation": 2006,
+  "nameOfClinic": "Downtown Medical",
+  "speciality": "SURGERY"
+}
+
+###
+POST http://localhost:7071/api/doctordb/
+
+{
+  "name": "Dr Alice Smithson",
+  "dateOfBirth": "1975-04-12",
+  "yearOfGraduation": 2000,
+  "nameOfClinic": "City Health Clinic",
+  "speciality": "FAMILY_MEDICINE"
+}
+
+###
+DELETE http://localhost:7071/api/doctordb/
